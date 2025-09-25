@@ -1,0 +1,18 @@
+# Core dependencies for AI Readiness Assessment Tool
+pydantic>=2.11.9
+deepagents>=0.0.5
+
+# Deep Agents dependencies (automatically installed)
+langgraph>=0.2.6
+langchain-anthropic>=0.1.23
+langchain>=0.2.14
+langchain-openai>=0.1.0
+
+# Additional dependencies for development and testing
+pytest>=7.0.0  # For testing
+python-dotenv>=1.0.0  # For environment variables
+
+# Streamlit frontend dependencies
+streamlit>=1.28.0  # Web interface
+plotly>=5.15.0  # Interactive charts
+pandas>=2.0.0  # Data manipulation
