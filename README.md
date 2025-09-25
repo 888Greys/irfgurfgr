@@ -91,6 +91,8 @@ A comprehensive AI readiness assessment tool for Kenyan businesses, featuring an
    ```bash
    npm run dev
    ```
+   
+   *Note: If you experience Turbopack issues, you can use the stable webpack build by temporarily modifying the dev script in package.json to `"next dev"` instead of `"next dev --turbopack"`*
 
    The frontend will start on `http://localhost:3000`
 
@@ -183,13 +185,33 @@ npm run build
 npm start
 ```
 
-## 🤝 Contributing
+## 🔧 Troubleshooting
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
+### Frontend Build Issues
+If you encounter Turbopack errors or slow filesystem warnings:
+
+1. **Clear Next.js cache:**
+   ```bash
+   cd frontend
+   rm -rf .next node_modules/.cache
+   npm run dev
+   ```
+
+2. **Switch to stable webpack (temporary):**
+   Edit `frontend/package.json` and change the dev script from `"next dev --turbopack"` to `"next dev"`
+
+3. **Check antivirus exclusions:**
+   Add your project directory to antivirus exclusions if you have real-time scanning enabled
+
+### Backend Issues
+- **LLM API Keys:** Ensure either `OPENAI_API_KEY` or `CEREBRAS_API_KEY` is set in `backend/.env`
+- **Port conflicts:** Make sure port 8000 is available for the backend
+- **Python version:** Use Python 3.11+ for best compatibility
+
+### Common Errors
+- **ENOENT errors:** Usually resolved by clearing cache and restarting
+- **Build manifest errors:** Clear `.next` directory and rebuild
+- **API connection errors:** Ensure backend is running on port 8000
 
 ## 📄 License
 
