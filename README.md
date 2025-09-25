@@ -57,15 +57,16 @@ A comprehensive AI readiness assessment tool for Kenyan businesses, featuring an
    ```
 
 4. **Set up environment variables:**
-   Create a `.env` file in the backend directory:
+   ```bash
+   cp .env.example .env
+   ```
+   
+   Edit the `.env` file and add your API keys:
    ```env
-   # Required: Choose one LLM provider
+   # Choose one LLM provider
    OPENAI_API_KEY=your_openai_api_key_here
    # OR
    CEREBRAS_API_KEY=your_cerebras_api_key_here
-
-   # Optional: Database configuration (uses JSON files by default)
-   # DATABASE_URL=your_database_url_here
    ```
 
 5. **Run the backend server:**
